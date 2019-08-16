@@ -20,7 +20,7 @@ export class Chart3 extends Component {
       
           width:500,
           height:300,
-          title: 'Pending Requests/Business Units',
+          // title: 'Pending Requests/Business Units',
           pieHole: 0.4,
         };
 

@@ -1,46 +1,40 @@
 import React, { Component } from 'react';
+import {Chart} from 'react-google-charts';
 
 export class Chart4 extends Component {
-    loadGoogle(){
-        const self = this;
-        console.log("Hello");
-        window.google.charts.load('current', {'packages':['bar']});
-        window.google.charts.setOnLoadCallback(drawStuff);
-  
-        function drawStuff() {
-          var data = new window.google.visualization.arrayToDataTable([
-            ['Galaxy', 'Distance', 'Brightness'],
-            ['Canis Major Dwarf', 8000, 23.3],
-            ['Sagittarius Dwarf', 24000, 4.5],
-            ['Ursa Major II Dwarf', 30000, 14.3],
-            ['Lg. Magellanic Cloud', 50000, 0.9],
-            ['Bootes I', 60000, 13.1]
-          ]);
-  
-          var options = {
-            width: 500,
-            chart: {
-              title: 'Nearby galaxies',
-              subtitle: 'distance on the left, brightness on the right'
-            },
-            bars: 'horizontal'}
-            var chart = new window.google.charts.Bar(document.getElementById(self.props.id));
-            chart.draw(data, options);
-          };
-  
-       
-      };
-      
-      
-  
-      componentDidMount(){
-          console.log("In chart4");
-          this.loadGoogle();
-      }     
-  
-      render() {
-          return (
-            <div id = {this.props.id}></div>     
-          );
-      }
-  }
+    render(){
+        return(
+            <Chart
+                width={'500px'}
+                height={'300px'}
+                chartType="Bar"
+                loader={<div>Loading Chart</div>}
+                data={[
+                    ['Supplier', 'Total Requests', 'Approved', 'Pending'],
+                    ['TCS', 1000, 400, 200],
+                    ['Cognizant', 1170, 460, 250],
+                    ['Infosys', 1660, 1120, 300],
+                    ['Accenture', 1030, 540, 350],
+                ]}
+                options={{
+                    axes:{
+                        y:{
+                            0: { side: 'top', label: 'No. of Requests'}
+                        }
+                    },    
+                }}
+                // options={{
+                //     // Material design options
+                //     chart: {
+                //     title: 'Company Performance',
+                //     subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                //     },
+                // }}
+                // For tests
+                rootProps={{ 'data-testid': '2' }}
+                />
+        );
+
+    }
+
+}

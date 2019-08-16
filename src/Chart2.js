@@ -9,18 +9,22 @@ export class Chart2 extends Component {
   
         function drawStuff() {
             var data = new window.google.visualization.arrayToDataTable([
-                ['Levels', '', ''],
-                ['L1', 30, 23],
-                ['L2', 24, 4],
-                ['L3', 30, 13],
-                ['L4', 50, 9],
-                ['L5', 50, 11]
+                ['Levels', 'Total','Approved', 'Pending'],
+                ['L1', 53,30, 23],
+                ['L2', 28,24, 4],
+                ['L3',43, 30, 13],
+                ['L4', 59,50, 9],
+                ['L5', 61,50, 11]
             ]);
     
             var options = {
                 width:500,
-                height:300,                
-            legend: 'none',
+                height:300,
+                axes:{
+                    x:{
+                        0: { side: 'top', label: 'No. of Requests'}
+                    }
+                },              
             bars: 'horizontal' // Required for Material Bar Charts.
             };
 

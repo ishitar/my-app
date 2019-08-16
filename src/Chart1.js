@@ -15,7 +15,7 @@ export class Chart1 extends Component {
         ['Chennai', 4,2],
         ['UK', 2,8],
       ]);
-        var options = {'title':'Location', 'width':500, 'height':300};
+        var options = {'width':500, 'height':300};
         var chart = new window.google.visualization.PieChart(document.getElementById(self.props.id));
         chart.draw(data, options);      
       }
