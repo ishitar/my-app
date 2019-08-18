@@ -10,7 +10,7 @@ export class Chart4 extends Component {
                 chartType="Bar"
                 loader={<div>Loading Chart</div>}
                 data={[
-                    ['Supplier', 'Total Requests', 'Approved', 'Pending'],
+                    ['Supplier', 'Total', 'Approved', 'Pending'],
                     ['TCS', 1000, 400, 200],
                     ['Cognizant', 1170, 460, 250],
                     ['Infosys', 1660, 1120, 300],

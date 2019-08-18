@@ -5,7 +5,7 @@ import { Footer } from "./Footer";
 
 
 const titleStyle = {
-    padding: "35px"
+    padding: "10px"
 };
 export default class App extends Component {
      

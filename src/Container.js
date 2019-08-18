@@ -3,6 +3,8 @@ import { Chart1 } from "./Chart1";
 import { Chart2 } from "./Chart2";
 import { Chart3 } from "./Chart3";
 import { Chart4 } from "./Chart4";
+import './Container.css';
+import { TimeRange } from './TimeRange';
 
 export class Container extends Component {  
 
@@ -11,38 +13,44 @@ export class Container extends Component {
     }
       render() {
           return (
+        <React.Fragment>
+
+            <div style={{padding: "10px"}}><TimeRange /></div><br/>
             <div className="container">
-                    <div className="row">
+                
+                    {/* <div className="row mb-4"> */}
                         {/* <div class="col-sm-6"></div>  */}
-                        <div className="col-md-4 col-lg-4 col-sm-4">
-                            <div className="card mx-auto">
+                        {/* <div className="col-lg-6"> */}
+                        <div className="card-deck">
+                            <div className="card" width="300px">
                                 <div className="card-header">Total Requests at Different Levels</div>
                                 <div className="card-body"><Chart2 id ={this.obj.cls[1] }/></div>
                             </div>
-                        </div>
-                        <div className="col-md-4 col-lg-4 col-sm-4">
-                            <div className="card mx-auto">
+                        {/* </div> */}
+                        {/* <div className="col-lg-6"> */}
+                            <div className="card">
                                 <div className="card-header" >Pending Requests Location Wise</div>
-                                <div className="card-body"><h2><Chart1 id ={this.obj.cls[0] }/></h2></div>
+                                <div className="card-body"><Chart1 id ={this.obj.cls[0] }/></div>
                             </div>
                         </div>
                         {/* <div className="col-md-4 col-lg-4 col-sm-4"><h2><Chart1 id ={this.obj.cls[0]}/></h2></div>   */}
-                                         
-                    </div>
-                    <div className="row">
-                        <div className="col-md-4 col-lg-4 col-sm-4">
-                                <div className="card mx-auto">
+                      <br/>                   
+                    {/* </div> */}
+                    {/* <div className="row mb-2">
+                        <div className="col-lg-6"> */}
+                        <div className="card-deck">
+                                <div className="card">
                                     <div className="card-header">Pending Requests Bussiness Unit Wise</div>
-                                    <div className="card-body"><h2><Chart3 id ={this.obj.cls[2] }/></h2></div>
+                                    <div className="card-body"><Chart3 id ={this.obj.cls[2] }/></div>
                                 </div>
-                        </div>
-                        <div className="col-md-4 col-lg-4 col-sm-4">
-                            <div className="card mx-auto">
-                                <div className="card-header">Pending Requests Supplier Wise</div>
+                        {/* </div> */}
+                        {/* <div className="col-lg-6"> */}
+                            <div className="card">
+                                <div className="card-header">Total Requests Supplier Wise</div>
                                 <div className="card-body"><Chart4 /></div>
                             </div>
                             
-                        </div>
+                        {/* </div> */}
 
                         
                         {/* <div className="col-md-4 col-lg-4 col-sm-4">
@@ -52,7 +60,9 @@ export class Container extends Component {
                                 </div>
                         </div> */}
                     </div>
-            </div>     
+                    <br/>
+            </div>   
+    </React.Fragment>  
           );
       }
 
